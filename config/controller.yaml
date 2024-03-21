@@ -1,0 +1,23 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    gripper_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+# Gripper
+gripper_controller:
+  ros__parameters:
+    joints:
+      - grip1_joint
+      - gf1_joint
+      - gf2_joint
+      - cy_joint
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
